@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h2>Name:<strong> <%= link_to @list.name, new_list_item_path(@list.id) %></strong></h2>(Click list name to add a task!)
+</p>
+
+<p>
+  <strong>List Added on:</strong>
+  <%= @list.added_on %>
+</p>
+
+<p>
+  <strong>List Items:</strong>
+  <% @items.each do |item| %>
+    <p>
+      <%= render item %>
+    </p>
+  <% end %>
+</p>
+
+<p>
+  <strong>List to be completed by:</strong>
+  <%= @list.to_be_completed_on %>
+</p>
+
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %>

@@ -1,0 +1,7 @@
+<tr>
+  <td><%= item.task %>:</td>
+  <td>
+    | <%= link_to "edit item", edit_list_item_path(id: item.id, list_id: @list.id) %> |
+    <%= link_to "delete", list_item_path(id: item.id, list_id: @list.id), method: :delete %>
+  </td>
+</tr>
